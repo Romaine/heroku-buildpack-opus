@@ -10,8 +10,6 @@ main() {
 
     set -eo pipefail
 
-    load-env
-
     announce "Building opus_sm"
     build-opus $CACHE_DIR
 
