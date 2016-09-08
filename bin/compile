@@ -11,9 +11,9 @@ main() {
     set -eo pipefail
 
     announce "Building opus_sm"
-    build-opus $CACHE_DIR
+    build-opus
 
-    install $CACHE_DIR/opus_sm_demo bin/opus_sm_demo
+    install opus_sm_demo bin/opus_sm_demo
 }
 
 install() {
@@ -31,6 +31,9 @@ announce() {
 }
 
 build-opus() {
+    declare opus_build_dir=/tmp/opus-build
+    mkdir -p $opus_build_dir
+    cd $opus_build_dir
     wget https://github.com/jzombi/opus_sm/archive/master.zip -O temp.zip; unzip temp.zip; rm temp.zip
     cd opus_sm-master
     ./autogen.sh
