@@ -10,10 +10,10 @@ main() {
 
     set -eo pipefail
 
-    announce "Building opus_sm"
+    announce "Building opus"
     build-opus
 
-    install opus_sm_demo bin/opus_sm_demo
+    install opus_demo bin/opus_demo
     PROFILE_PATH="$BUILD_DIR/.profile.d/opus.sh"
     echo 'export PATH="$PATH:$HOME/bin/"' >> $PROFILE_PATH
 }
@@ -37,7 +37,7 @@ build-opus() {
     mkdir -p $opus_build_dir
     cd $opus_build_dir
     wget https://github.com/xiph/opus/archive/master.zip -O temp.zip; unzip temp.zip; rm temp.zip
-    cd opus_sm-master
+    cd opus-master
     ./autogen.sh
     ./configure
     make
