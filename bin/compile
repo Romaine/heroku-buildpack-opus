@@ -41,6 +41,7 @@ build-opus() {
     ./autogen.sh
     ./configure
     make
+    make install
 }
 
 [[ "$0" != "$BASH_SOURCE" ]] || main "$@"
