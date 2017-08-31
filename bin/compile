@@ -40,7 +40,7 @@ build-opus() {
     cd opus-master
     ./autogen.sh
     ./autogen.sh
-    ./configure --prefix=/app    \
+    ./configure --prefix=/app/.heroku/vendor    \
                 --disable-static \
                 --docdir=/app/doc/opus-1.2.1 &&
     make
