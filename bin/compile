@@ -42,7 +42,6 @@ build-opus() {
     ./configure --prefix=/app/.heroku/vendor    \
                 --disable-static &&
     make
-    make install
 }
 
 [[ "$0" != "$BASH_SOURCE" ]] || main "$@"
